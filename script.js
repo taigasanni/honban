@@ -1,6 +1,6 @@
 const root = document.documentElement;
 const dyeCanvas = document.getElementById('dye-canvas');
-const dyeCtx = dyeCanvas.getContext('2d');
+const dyeCtx = dyeCanvas ? dyeCanvas.getContext('2d') : null;
 const vesselContainer = document.getElementById('vessel-3d');
 const editToggle = document.getElementById('toggle-edit');
 const resetContentButton = document.getElementById('reset-content');
@@ -34,6 +34,7 @@ function easeTo(current, target, speed = 0.08) {
 }
 
 function resizeDyeCanvas() {
+  if (!dyeCanvas) return;
   dyeCanvas.width = window.innerWidth;
   dyeCanvas.height = window.innerHeight;
 }
@@ -105,6 +106,7 @@ function persistState() {
 }
 
 function drawDye() {
+  if (!dyeCtx || !dyeCanvas) return;
   dyeCtx.clearRect(0, 0, dyeCanvas.width, dyeCanvas.height);
   const radius = Math.max(dyeCanvas.width, dyeCanvas.height) * (0.28 + dyeState.intensity * 0.62);
   const grad = dyeCtx.createRadialGradient(dyeState.x, dyeState.y, 0, dyeState.x, dyeState.y, radius);
@@ -245,6 +247,20 @@ function setupSmoothAnchorLinks() {
       event.preventDefault();
       const top = target.getBoundingClientRect().top + window.scrollY - 66;
       window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+}
+
+function setupWobbleText() {
+  document.querySelectorAll('.wobble-text').forEach((node) => {
+    const chars = Array.from(node.textContent || '');
+    node.textContent = '';
+    chars.forEach((char, index) => {
+      const span = document.createElement('span');
+      span.className = 'wobble-char';
+      span.style.setProperty('--i', String(index));
+      span.textContent = char;
+      node.appendChild(span);
     });
   });
 }
@@ -434,6 +450,7 @@ function tick(vessel3D, time) {
   setupReveal();
   setupPointer();
   setupParallax();
+  setupWobbleText();
   setupJournalColorChange();
   setupJournalRail();
   setupSmoothAnchorLinks();
