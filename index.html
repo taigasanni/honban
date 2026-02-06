@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>株式会社Hakki | 白い器サイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="porcelain-texture"></div>
+    <canvas id="dye-canvas" aria-hidden="true"></canvas>
+    <div class="vessel-bg" aria-hidden="true">
+      <div id="vessel-3d"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="inner">
+        <a class="logo" href="#top">Hakki</a>
+        <nav>
+          <a href="#what">What we do</a>
+          <a href="#about">About</a>
+          <a href="#company">Company</a>
+          <a href="#journal">Journal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button type="button" id="toggle-edit" class="edit-toggle" aria-pressed="false">編集モード</button>
+        <button type="button" id="reset-content" class="edit-toggle">編集内容をリセット</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section reveal">
+        <div class="inner narrow">
+          <div>
+            <p class="eyebrow" data-edit-key="hero.eyebrow">Marketing × Design Studio</p>
+            <h1 data-edit-key="hero.title">白い器のように、
+染まり、染める。</h1>
+            <p class="lead" data-edit-key="hero.lead">
+              株式会社Hakkiは、クライアントの色に寄り添いながら、
+              共に新しい価値を生み出すマーケティング・デザインパートナーです。
+            </p>
+            <p class="note" data-edit-key="hero.note">背景の器はゆらゆらと呼吸しながら、スクロールに合わせて柔らかく形を変えます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="what" class="section reveal parallax" data-depth="0.06">
+        <div class="inner narrow">
+          <h2 data-edit-key="what.title">What we do</h2>
+          <ul class="services">
+            <li>
+              <h3>Brand Direction</h3>
+              <p data-edit-key="what.items.0">ブランドの思想と言葉を整理し、伝わる体験へ設計します。</p>
+            </li>
+            <li>
+              <h3>Creative Production</h3>
+              <p data-edit-key="what.items.1">Web / Graphic / Motionを横断し、静かで強い印象を形にします。</p>
+            </li>
+            <li>
+              <h3>Growth Marketing</h3>
+              <p data-edit-key="what.items.2">感性とデータを両立し、持続的な成果につながる導線を作ります。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal parallax" data-depth="0.1">
+        <div class="inner narrow">
+          <h2 data-edit-key="about.title">About</h2>
+          <p data-edit-key="about.body">
+            Hakkiは、企画・制作・運用までを一気通貫で支援するクリエイティブチーム。
+            小さな違和感を丁寧に拾い上げ、事業の「らしさ」を言語化・視覚化します。
+          </p>
+          <div class="vision-card">
+            <h3>Vision</h3>
+            <p data-edit-key="about.vision">柔らかく、しなやかに、色を受け止める器であること。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="company" class="section reveal">
+        <div class="inner narrow">
+          <h2 data-edit-key="company.title">Company</h2>
+          <div class="company-card">
+            <dl class="company-grid">
+              <dt>会社名</dt><dd data-edit-key="company.name">株式会社Hakki（Hakki Inc.）</dd>
+              <dt>設立</dt><dd data-edit-key="company.founded">2022年4月</dd>
+              <dt>所在地</dt><dd data-edit-key="company.location">東京都渋谷区（リモート主体）</dd>
+              <dt>事業内容</dt><dd data-edit-key="company.business">マーケティング戦略立案 / ブランドデザイン / Web制作・運用</dd>
+              <dt>対応領域</dt><dd data-edit-key="company.domain">Design / Marketing / Creative Direction</dd>
+              <dt>チーム</dt><dd data-edit-key="company.team">ストラテジスト、デザイナー、エンジニアの少数精鋭体制</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="journal" class="section reveal">
+        <div class="inner">
+          <div class="journal-head">
+            <h2>Journal</h2>
+            <div class="journal-controls" aria-label="journal controls">
+              <button type="button" class="journal-nav" data-journal-nav="prev" aria-label="前の記事へ">←</button>
+              <button type="button" class="journal-nav" data-journal-nav="next" aria-label="次の記事へ">→</button>
+            </div>
+          </div>
+          <div class="journal-list" aria-label="journal horizontal scroll">
+            <article class="journal-item" data-color="#5b8def">
+              <div class="journal-thumb thumb-design" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="meta" data-edit-key="journal.items.0.meta">Design · 2026.01.18</p>
+                <h3 data-edit-key="journal.items.0.title">余白が語るブランド体験の設計論</h3>
+              </div>
+            </article>
+            <article class="journal-item" data-color="#24c7c3">
+              <div class="journal-thumb thumb-marketing" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="meta" data-edit-key="journal.items.1.meta">Marketing · 2026.01.05</p>
+                <h3 data-edit-key="journal.items.1.title">数字と感性を同じ会議テーブルに置く方法</h3>
+              </div>
+            </article>
+            <article class="journal-item" data-color="#ff9459">
+              <div class="journal-thumb thumb-ui" aria-hidden="true"></div>
+              <div class="journal-body">
+                <p class="meta" data-edit-key="journal.items.2.meta">Design · 2025.12.20</p>
+                <h3 data-edit-key="journal.items.2.title">触れたくなるUIは、なぜ記憶に残るのか</h3>
+              </div>
+            </article>
+          </div>
+          <p class="journal-hint">横スクロール・ホイール・矢印ボタンで閲覧できます。</p>
+        </div>
+      </section>
+
+      <section id="contact" class="section reveal">
+        <div class="inner narrow">
+          <h2 data-edit-key="contact.title">Contact</h2>
+          <form class="contact-form" id="contact-form">
+            <label>
+              お名前
+              <input type="text" name="name" placeholder="山田 太郎" required />
+            </label>
+            <label>
+              メールアドレス
+              <input type="email" name="email" placeholder="hello@example.com" required />
+            </label>
+            <label>
+              ご相談内容
+              <textarea rows="4" name="message" placeholder="ご相談内容を簡潔にご記入ください" required></textarea>
+            </label>
+            <button type="submit">送信する</button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© Hakki Inc.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
