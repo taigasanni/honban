@@ -165,6 +165,55 @@ h1[data-edit-key] { white-space: pre-line; }
 
 .service-rich-card:hover { transform: translateY(-3px); }
 
+.top-interactive {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.float-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.float-chip {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.78rem;
+  color: #444;
+  border: 1px solid rgba(26, 26, 26, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+
+.float-chip:nth-child(2) { animation-delay: 0.6s; }
+.float-chip:nth-child(3) { animation-delay: 1.2s; }
+.float-chip:nth-child(4) { animation-delay: 1.8s; }
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.experience-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.interactive-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  border-radius: 18px;
+  padding: 1.1rem 1.2rem;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(26, 26, 26, 0.08);
+}
+
 .wobble-text { display: inline-flex; gap: 0.02em; }
 .wobble-char { display: inline-block; }
 .service-rich-card:hover .wobble-char {
